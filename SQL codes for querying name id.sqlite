@@ -1,0 +1,24 @@
+-- Codes for checking personid --
+select * from BIOG_MAIN 
+where c_name like 'su shi';
+
+select * from BIOG_MAIN 
+where c_name like 'liu zongyuan';
+
+select * from BIOG_MAIN 
+where c_name like 'han yu';
+
+select * from BIOG_MAIN 
+where c_name like 'ouyang xiu';
+
+select * from BIOG_MAIN 
+where c_name like 'su xun';
+
+select * from BIOG_MAIN 
+where c_name like 'su zhe';
+
+select * from BIOG_MAIN 
+where c_name like 'wang anshi';
+
+select * from BIOG_MAIN 
+where c_name like 'zeng gong';
