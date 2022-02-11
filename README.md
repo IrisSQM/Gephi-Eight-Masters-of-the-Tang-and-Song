@@ -20,7 +20,7 @@ To be precise, it should be the Eight **_Great Prose Masters_** of the Tang and 
 - Zeng Gong 曾巩 (1019–1083)
 
 ### Introduction of CBDB and Gephi
-#### CBDB
+### CBDB
 According to the [official website of CBDB](https://projects.iq.harvard.edu/cbdb/home), it is jointly developed by:
 - Fairbank Center for Chinese Studies at Harvard University (哈佛大学费正清中国研究中心)
 - Institute of History and Philology of Academia Sinica (中研院历史语言研究所)
@@ -39,7 +39,7 @@ In terms of how to use the database, please refer to the latest user guide:
 - [CBDB Users Guide 20210526](https://projects.iq.harvard.edu/files/chinesecbdb/files/cbdb_users_guide.pdf) (also can be found in the repository)
 - [Chinese Version of the Users Guide 2021](https://projects.iq.harvard.edu/files/cbdb/files/cbdb_users_guide_ch_20210322.pdf)
 
-#### Gephi
+### Gephi
 According to the [official website of Gephi](https://gephi.org),
 
 >Gephi is the leading visualization and exploration software for all kinds of graphs and networks. Gephi is **open-source and free**.
@@ -68,9 +68,9 @@ The SQL query codes for the Eight are stored in SQL codes for querying person id
 - Include Person ID: YES
 - Remove 0-degree: YES
 
-### After the query, further filter out relationships with less than 3 interactions (labeled as 'Count').
+### 2. After the query, further filter out relationships with less than 3 interactions (labeled as 'Count').
 
-### Export the query results and clean it with the python codes in Data Cleaning Codes.py.
+### 3. Export the query results and clean it with the python codes in Data Cleaning Codes.py.
 Sample codes are shown below. Note that:
 - Input: query results.xlsx
 - Output: the_eight_gephi.xlsx
@@ -120,9 +120,9 @@ edge.to_excel(writer, sheet_name = 'edges_table')
 
 writer.save()
 ```
-### Import the two worksheets to Gephi and start playing around with it!
+### 4. Import the two worksheets to Gephi and start playing around with it!
 
 ## Outcome
 After visualizing the social network, Zhu Xi popped up to be an eminent tycoon in the history that was closed related to the Eight either directly and indirectly. Also, Su Shi was another popular figure. The image below shows the network.
 
-![Gephi Visualization of the Social Network of the Eight Masters of the Tang and Song](Gephi Screenshot.png)
+![Gephi Visualization of the Social Network of the Eight Masters of the Tang and Song](./Gephi Screenshot.png)
