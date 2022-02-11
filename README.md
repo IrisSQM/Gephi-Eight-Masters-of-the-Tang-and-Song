@@ -125,4 +125,4 @@ writer.save()
 ## Outcome
 After visualizing the social network, Zhu Xi popped up to be an eminent tycoon in the history that was closed related to the Eight either directly and indirectly. Also, Su Shi was another popular figure. The image below shows the network.
 
-![Gephi Visualization of the Social Network of the Eight Masters of the Tang and Song](./Gephi Screenshot.png)
+![Gephi Visualization of the Social Network of the Eight Masters of the Tang and Song](/Gephi Screenshot.png)
