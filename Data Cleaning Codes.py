@@ -1,29 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Project 7 Data Cleaning
-
-Created on Sat Nov 13 19:52:14 2021
-
-@author: shiqimeng
+Data Cleaning Codes
 """
 '''
 The data for the social network of the eight masters of the Tang and Song 
 are extracted from China Biographical Database Project (CBDB).
-
-I downloaded CBDB Standalone Database, opened it in Microsoft Access, 
-and used the querying interface LookAtNetworks to get the data.
-
-Query criteria:
-    Dynasties: from Sui to Yuan
-    Max Node Distance: 2
-    Max Loop: 10
-    Include Kin: YES
-    Include Person ID: YES
-    Remove 0-degree: YES
-
-After the query, I further filtered out relationships with less than 3 
-interactions (labeled as 'Count').
 
 This code is intended to prepare two excel tables for visualization in Gephi.
 
@@ -34,7 +16,7 @@ output: the_eight_gephi.xlsx
 import pandas as pd
 import os
  
-path = '/Users/shiqimeng/Desktop/Project 2-7_SHI_Qimeng_3035873781/Project 7 Folder'
+path = '<Your directory path>'
 
 raw = pd.read_excel(path + os.sep + 'query results.xlsx')
 
