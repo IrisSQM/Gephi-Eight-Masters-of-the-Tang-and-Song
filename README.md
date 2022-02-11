@@ -82,7 +82,7 @@ import os
  
 path = '<Your directory path>'
 
-raw = pd.read_excel(path + os.sep + 'query results.xlsx')
+raw = pd.read_excel(path + os.sep + 'query_results.xlsx')
 
 nodes = pd.DataFrame()
 linked = pd.DataFrame() # Dataset is pairwise so need to record source and target separately
