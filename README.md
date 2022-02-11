@@ -3,13 +3,13 @@
 ## Project Description
 This project was originally assigned as an individual project of the course MFIN7033 Advanced Financial Programming and Databases in the Master of Finance in Financial Technology program at HKU. The author (which is me), in the course of conducting the assignment, found the China Biographical Database (CBDB) quite valuable and would like to draw some attention to it by sharing my work here.
 
-The project was completed in December 2021.  In **January 2022**, a new version of CBDB was released. The Project Details section below are based on the **May 2021** version. If you want to replicate the project, please use the latest version.
+The project was completed in December 2021.  In **January 2022**, a new version of CBDB was released. The **Project Details** section below are based on the **May 2021** version. If you want to replicate the project, please use the latest version.
 
 ### Objective of the Project
 To use Gephi to visualize the social network of the Eight Masters of the Tang and Song (唐宋八大家).
 
 ### Introduction of the Eight Masters of the Tang and Song
-To be precise, it should be the Eight **Great Prose Masters** of the Tang and Song, which means the title was granted for the excellence in prose writing. According to [Wikipedia](https://en.wikipedia.org/wiki/Eight_Masters_of_the_Tang_and_Song), the Eight includes
+To be precise, it should be the Eight **_Great Prose Masters_** of the Tang and Song, which means the title was granted for the excellence in **prose writing**. According to [Wikipedia](https://en.wikipedia.org/wiki/Eight_Masters_of_the_Tang_and_Song), the Eight includes:
 - Han Yu 韩愈 (768–824)
 - Liu Zongyuan 柳宗元 (773–819)
 - Ouyang Xiu 欧阳修 (1007–1072)
@@ -20,7 +20,7 @@ To be precise, it should be the Eight **Great Prose Masters** of the Tang and So
 - Zeng Gong 曾巩 (1019–1083)
 
 ### Introduction of CBDB and Gephi
-1. CBDB
+#### CBDB
 According to the [official website of CBDB](https://projects.iq.harvard.edu/cbdb/home), it is jointly developed by:
 - Fairbank Center for Chinese Studies at Harvard University (哈佛大学费正清中国研究中心)
 - Institute of History and Philology of Academia Sinica (中研院历史语言研究所)
@@ -39,7 +39,7 @@ In terms of how to use the database, please refer to the latest user guide:
 - [CBDB Users Guide 20210526](https://projects.iq.harvard.edu/files/chinesecbdb/files/cbdb_users_guide.pdf) (also can be found in the repository)
 - [Chinese Version of the Users Guide 2021](https://projects.iq.harvard.edu/files/cbdb/files/cbdb_users_guide_ch_20210322.pdf)
 
-2. Gephi
+#### Gephi
 According to the [official website of Gephi](https://gephi.org),
 
 >Gephi is the leading visualization and exploration software for all kinds of graphs and networks. Gephi is **open-source and free**.
@@ -48,8 +48,9 @@ You can download Gephi from their website. There is also a [quick start tutorial
 
 ## Project Details
 The following steps show how to get the output network image below.
-1. Download CBDB Standalone Database, open it in Microsoft Access, and use the querying interface **LookAtNetworks** to get the data.
-### Import people
+### 1. Download CBDB Standalone Database, open it in Microsoft Access, and use the querying interface **LookAtNetworks** to get the data.
+    
+#### Import people
 Before import people, you need to create a text file in ANSI format containing only person IDs. To get the IDs, you can use **LookAtEntry** query in the CBDB Access Query System. For Mac users, you can use my sample SQL code below:
 
 ```
@@ -59,7 +60,7 @@ where c_name like 'su shi';
 
 The SQL query codes for the Eight are stored in SQL codes for querying person id.sqlite.
 
-### Query criteria
+#### Query criteria
 - Dynasties: from Sui to Yuan
 - Max Node Distance: 2
 - Max Loop: 10
@@ -67,9 +68,9 @@ The SQL query codes for the Eight are stored in SQL codes for querying person id
 - Include Person ID: YES
 - Remove 0-degree: YES
 
-2. After the query, further filter out relationships with less than 3 interactions (labeled as 'Count').
+### After the query, further filter out relationships with less than 3 interactions (labeled as 'Count').
 
-3. Export the query results and clean it with the python codes in Data Cleaning Codes.py.
+### Export the query results and clean it with the python codes in Data Cleaning Codes.py.
 Sample codes are shown below. Note that:
 - Input: query results.xlsx
 - Output: the_eight_gephi.xlsx
@@ -119,9 +120,9 @@ edge.to_excel(writer, sheet_name = 'edges_table')
 
 writer.save()
 ```
-4. Import the two worksheets to Gephi and start playing around with it!
+### Import the two worksheets to Gephi and start playing around with it!
 
 ## Outcome
 After visualizing the social network, Zhu Xi popped up to be an eminent tycoon in the history that was closed related to the Eight either directly and indirectly. Also, Su Shi was another popular figure. The image below shows the network.
 
-![Gephi Visualization of the Social Network of the Eight Masters of the Tang and Song](/assets/images/Gephi Screenshot.png)
+![Gephi Visualization of the Social Network of the Eight Masters of the Tang and Song](Gephi Screenshot.png)
