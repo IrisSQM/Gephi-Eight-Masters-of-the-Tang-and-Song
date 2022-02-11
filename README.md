@@ -25,6 +25,7 @@ According to the [official website of CBDB](https://projects.iq.harvard.edu/cbdb
 - Fairbank Center for Chinese Studies at Harvard University (哈佛大学费正清中国研究中心)
 - Institute of History and Philology of Academia Sinica (中研院历史语言研究所)
 - Center for Research on Ancient Chinese History at Peking University (北京大学中国古代史研究中心)
+
 The database provides biographical information about
 > Approximately **515,488 individuals as of December 2021**, primarily from the 7th through 19th centuries.
 More importantly, it is available **free of charge, without restriction, and for academic use**. 
@@ -33,10 +34,10 @@ You can download the CBDB standalone database to your local computer or access t
 - [CBDB 20220127 version](https://projects.iq.harvard.edu/cbdb/download-cbdb-standalone-database)
 - [Access online](https://projects.iq.harvard.edu/cbdb/accessing-cbdb-online)
 
-For Mac users, only SQLite format is available. Hence, they do not enjoy the benefit of the CBDB Access Query System but have to know how to use SQL instead. Unfortunately, I am not an expert of SQL. Even though I would like to provide some query codes, I am not able to accomplish that right now. Nonetheless, I will try to do so in the future.
+For Mac users, _only SQLite_ format is available. Hence, they do not enjoy the benefit of the **CBDB Access Query System** but have to know how to use SQL instead. Unfortunately, I am not an expert of SQL. Even though I would like to provide some query codes, I am not able to accomplish that right now. Nonetheless, I will try to do it in the future.
 
 In terms of how to use the database, please refer to the latest user guide:
-- [CBDB Users Guide 20210526](https://projects.iq.harvard.edu/files/chinesecbdb/files/cbdb_users_guide.pdf) (also can be found in the repository)
+- [CBDB Users Guide 20210526](https://projects.iq.harvard.edu/files/chinesecbdb/files/cbdb_users_guide.pdf)
 - [Chinese Version of the Users Guide 2021](https://projects.iq.harvard.edu/files/cbdb/files/cbdb_users_guide_ch_20210322.pdf)
 
 ### Gephi
@@ -48,19 +49,19 @@ You can download Gephi from their website. There is also a [quick start tutorial
 
 ## Project Details
 The following steps show how to get the output network image below.
-### 1. Download CBDB Standalone Database, open it in Microsoft Access, and use the querying interface **LookAtNetworks** to get the data.
+### 1. Download CBDB Standalone Database, open it in Microsoft Access, and use the query interface **LookAtNetworks** to get the data.
     
 #### Import people
-Before import people, you need to create a text file in ANSI format containing only person IDs. To get the IDs, you can use **LookAtEntry** query in the CBDB Access Query System. For Mac users, you can use my sample SQL code below:
+Before importing people list, you need to create a text file in _ANSI_ format containing only person IDs. To get the IDs, you can use **LookAtEntry** query in the CBDB Access Query System. For Mac users, you can use my sample SQL code below:
 
 ```
 select * from BIOG_MAIN 
 where c_name like 'su shi';
 ```
 
-The SQL query codes for the Eight are stored in SQL codes for querying person id.sqlite.
+The SQL query codes for the Eight are stored in [SQL_codes_for_querying_personid.sqlite](SQL_codes_for_querying_personid.sqlite).
 
-#### Query criteria
+#### Access Query Criteria
 - Dynasties: from Sui to Yuan
 - Max Node Distance: 2
 - Max Loop: 10
@@ -70,9 +71,9 @@ The SQL query codes for the Eight are stored in SQL codes for querying person id
 
 ### 2. After the query, further filter out relationships with less than 3 interactions (labeled as 'Count').
 
-### 3. Export the query results and clean it with the python codes in Data Cleaning Codes.py.
+### 3. Export the query results and clean it with the python codes in [Data_Cleaning_Codes.py](Data_Cleaning_Codes.py).
 Sample codes are shown below. Note that:
-- Input: query results.xlsx
+- Input: query_results.xlsx
 - Output: the_eight_gephi.xlsx
 
 ```
@@ -121,8 +122,12 @@ edge.to_excel(writer, sheet_name = 'edges_table')
 writer.save()
 ```
 ### 4. Import the two worksheets to Gephi and start playing around with it!
+[The_Eight.gephi](The_Eight.gephi) is a sample Gephi file with filters applied.
 
 ## Outcome
-After visualizing the social network, Zhu Xi popped up to be an eminent tycoon in the history that was closed related to the Eight either directly and indirectly. Also, Su Shi was another popular figure. The image below shows the network.
+After visualizing the social network, Zhu Xi popped up to be an eminent tycoon in the history who was closely related to the Eight either directly or indirectly. Also, Su Shi, Bai Juyi, and Ouyang Xiu were all popular figures. The image below shows the network.
 
 ![Gephi Visualization of the Social Network of the Eight Masters of the Tang and Song](Gephi_Screenshot.png)
+
+## Conclusion
+This project proves that reading is not the only means to understand history. With the advancement in technology and the digitization of data, we can connect to the past in ever more interesting ways.
